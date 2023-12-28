@@ -4,95 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estatein - Discover a place you'll love to live</title>
-    <!-- Include Tailwind CSS from CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Include Font Awesome from CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="../../Assets/css/style.css" rel="stylesheet">
+
 </head>
-<style>
-    .hamburger {
-        display: none;
-        cursor: pointer;
-    }
-    .hamburger div {
-        width: 30px;
-        height: 3px;
-        background-color: #ffffff;
-        margin: 6px 0;
-        transition: all 0.3s ease;
-    }
-    @media (max-width: 768px) {
-        .hamburger {
-            display: block;
-        }
-        .nav-menu {
-            display: none;
-        }
-        .nav-menu.responsive {
-            display: block;
-            position: absolute;
-            width: 100%;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background-color: #262626;
-        }
-    }
-    .form-inputs-container {
-        max-width: 300px; /* Adjust this value to the desired width */
-        margin: 0 auto;
-    }
 
-    .form-inputs-container label {
-        display: block;
-        color: #374151; /* This is the color for the labels */
-        margin-bottom: 0.5rem; /* Adds space between label and input */
-        font-size: 0.875rem; /* Example font size, adjust as needed */
-    }
-
-    .form-inputs-container input,
-    .form-inputs-container select,
-    .form-inputs-container button {
-        display: block;
-        width: 100%;
-        margin-bottom: 1rem; /* Adds space between form fields */
-    }
-    .custom-bg {
-        background-color: #141414;
-    }
-    .custom-bg2 {
-        background-color: #262626;
-    }
-    .footer-links li {
-        line-height: 2;
-    }
-    .footer-links{
-        padding-bottom: 20px;
-    }
-</style>
 <body class="custom-bg text-gray-400">
+
 <!-- Header -->
 <header class="custom-bg2 shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-6 md:space-x-10">
-        <a href="#" class="text-2xl font-extrabold text-purple-600">Estatein</a>
-        <div class="hamburger md:hidden" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 nav-container">
+        <a href="#" class="logo text-2xl font-extrabold text-purple-600">Estatein</a>
+        <!-- Desktop navigation menu -->
         <nav class="nav-menu hidden md:flex space-x-10">
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Home</a>
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">About</a>
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Services</a>
             <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Contact Us</a>
+        </nav>
+        <div class="nav-right hidden md:flex">
             <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Log in</a>
             <a href="#" class="ml-8 whitespace-nowrap inline-flex items-center justify-center bg-purple-600 text-base font-medium text-white px-4 py-2 border border-transparent rounded-md shadow-sm hover:bg-purple-700">Sign up</a>
-        </nav>
+        </div>
+        <!-- Hamburger icon for mobile view -->
+        <div class="hamburger md:hidden" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
 </header>
 
-<!-- Responsive Navigation Menu -->
-<nav class="nav-menu md:hidden">
+<!-- Mobile navigation menu -->
+<nav id="mobileMenu" class="hidden md:hidden">
     <a href="#" class="block py-2 px-4 text-sm text-gray-500 hover:bg-gray-700 hover:text-white">Home</a>
     <a href="#" class="block py-2 px-4 text-sm text-gray-500 hover:bg-gray-700 hover:text-white">About</a>
     <a href="#" class="block py-2 px-4 text-sm text-gray-500 hover:bg-gray-700 hover:text-white">Services</a>
@@ -148,9 +93,7 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-<!-- Footer -->
+
 <footer class="custom-bg text-gray-400">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap justify-between">
@@ -163,7 +106,9 @@
                   <span class="text-gray-500 ml-3">
                     <i class="fas fa-envelope"></i>
                   </span>
-                    <input type="text" placeholder="Enter Your Email" class="px-4 py-2 w-full bg-black text-white placeholder-gray-500 focus:outline-none">
+                    <label>
+                        <input type="text" placeholder="Enter Your Email" class="px-4 py-2 w-full bg-black text-white placeholder-gray-500 focus:outline-none">
+                    </label>
                     <button class="p-2 hover:bg-purple-700 transition-colors duration-300">
                         <i class="fas fa-paper-plane text-white"></i>
                     </button>
@@ -246,17 +191,6 @@
         </div>
     </div>
 </footer>
-
-<script>
-    function toggleMenu() {
-        var menu = document.querySelector('.nav-menu');
-        menu.classList.toggle('responsive');
-    }
-</script>
-
-</body>
-</html>
-
-
+<script src="../../Assets/js/myscript.js"></script>
 </body>
 </html>
