@@ -55,7 +55,7 @@
                 <input id="address" class="p-2 border border-gray-300 rounded" type="text" placeholder="Address" />
                 <div class="flex items-center justify-between">
                     <button class="sign-up-button bg-purple-600 text-white px-6 py-2 rounded transition duration-300 hover:bg-purple-700 focus:outline-none focus:ring">Sign Up</button>
-                    <p class="text-white ml-4"><a href="#" class="text-purple-300 hover:underline">Already have an account?</a></p>
+                    <p class="text-white ml-4"><a href="login.php" class="text-purple-300 hover:underline">Already have an account?</a></p>
                 </div>
             </div>
         </div>
@@ -63,7 +63,6 @@
 </div>
 
 <?php include '../../View/templates/footer.php'; ?>
-
 <script src="../../Assets/js/myscript.js"></script>
 </body>
 </html>
