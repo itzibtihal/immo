@@ -71,6 +71,11 @@
     margin-bottom: 1rem;
 }
 
+.sign-up-button {
+    width: 120px !important;
+    height: 40px;
+}
+
 .custom-bg {
     background-color: #141414;
 }
@@ -126,3 +131,25 @@
     }
 }
 
+.segment-control button {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+
+.second-button {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.segment-control button:hover {
+    background-color: #7B68EE;
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+.centred{
+    margin-left: 100px;
+}
+}
