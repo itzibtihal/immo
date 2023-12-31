@@ -6,15 +6,13 @@
     <title>Estatein - Discover a place you'll love to live</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="../../Assets/css/style.css" rel="stylesheet">
+    <link href="../../Assets/css/authstyle.css" rel="stylesheet">
 
 </head>
 
 <body class="custom-bg text-gray-400">
 <?php include '../../View/templates/header.php'; ?>
-<!-- Hero section -->
 <div class="centred custom-bg rounded shadow-lg p-6 mt-12 md:flex md:items-center relative">
-    <!-- Hero image with centered overlay text -->
     <div class="md:w-1/2 relative">
         <img src="../../Assets/img/hiDpiExtraLarge.webp" alt="Hero Image" class="w-full h-auto">
         <div class="absolute inset-0 flex items-center justify-center">

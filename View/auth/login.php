@@ -6,7 +6,7 @@
     <title>Estatein - Login</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="../../Assets/css/style.css" rel="stylesheet">
+    <link href="../../Assets/css/authstyle.css" rel="stylesheet">
 </head>
 
 <body class="custom-bg text-gray-400">
