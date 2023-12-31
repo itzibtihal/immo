@@ -1,0 +1,34 @@
+# Activer le module de réécriture d'URL (mod_rewrite)
+
+# RewriteEngine On
+
+
+# DirectoryIndex app/routes/Main.php
+
+
+# RewriteRule ^(.*)$ app/routes/Main.php?url=$1 [QSA,L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Exclude existing files and directories
+    # RewriteCond %{REQUEST_FILENAME} !-f
+    # RewriteCond %{REQUEST_FILENAME} !-d
+
+     # Exclude specific directories from the custom routing
+    # DirectoryIndex app/routes/Main.php
+    RewriteRule ^(?:Assets|css|img)/ - [L]
+    # Rewrite everything else
+    RewriteRule ^(.*)$ app/routes/Main.php?url=$1 [QSA,L]
+</IfModule>
+
+
+
+
+
+# <IfModule mod_rewrite.c>
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_FILENAME} !-d
+#     RewriteCond %{REQUEST_FILENAME} !-f
+#     RewriteRule ^ index.php [L]
+# </IfModule>
