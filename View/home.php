@@ -7,31 +7,37 @@
     <title>Estarein</title>
 
     <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="Assets/css/Home.css" rel="stylesheet">
+    <link rel="stylesheet" href="Assets/css/style.css">
 </head>
 
 <body style="background-color: #141414;">
+
+    <?php include 'templates/header.php' ?>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-        <div class="container-fluid justify-content-between">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid justify-content-between"> -->
             <!-- Brand (Logo) on the left -->
-            <a class="navbar-brand me-auto" href="#">
+            <!-- <a class="navbar-brand me-auto" href="#"> -->
                 <!-- <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
                     height="20" alt="MDB Logo" loading="lazy" style="margin-top: 2px;" /> -->
-                Estarein
-            </a>
+                <!-- Estarein
+            </a> -->
 
             <!-- Navbar toggler button for small screens -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
 
             <!-- Navbar items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto"> <!-- Centered links -->
-                    <li class="nav-item active">
+            <!-- <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">  -->
+                    <!-- Centered links -->
+                    <!-- <li class="nav-item active">
                         <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
@@ -40,17 +46,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Services</a>
                     </li>
-                </ul>
+                </ul> -->
 
                 <!-- "Contact Us" link on the right -->
-                <ul class="navbar-nav">
+                <!-- <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
     <!-- Navbar -->
 
 
@@ -414,11 +420,13 @@
     </div>
 
 
+    <?php include 'templates/footer.php' ?>
 
     <!-- Bootstrap JS (optional, for certain components) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Include Bootstrap JS (make sure you've included Bootstrap CSS and Popper.js as well) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Assets/js/myscript.js"></script>
 
 </body>
 

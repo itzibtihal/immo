@@ -1,7 +1,7 @@
 <?php
 namespace MyApp\Controllers;
 
-echo "Hello from SignupController";
+require  '../../View/auth/signup.php';
 class Signup {
     
 }

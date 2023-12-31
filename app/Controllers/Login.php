@@ -1,7 +1,7 @@
 <?php
 namespace MyApp\Controllers;
 
-echo "Hello from LoginController";
+require  '../../View/auth/login.php';
 class Login {
     
 }
