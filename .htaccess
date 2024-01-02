@@ -1,0 +1,19 @@
+# Activer le module de réécriture d'URL (mod_rewrite)
+
+# RewriteEngine On
+
+
+# DirectoryIndex app/routes/Main.php
+
+
+# RewriteRule ^(.*)$ app/routes/Main.php?url=$1 [QSA,L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+     # Exclude specific directories from the custom routing
+    # DirectoryIndex app/routes/Main.php
+    RewriteRule ^(?:Assets|css|img|js)/ - [L]
+    # Rewrite everything else
+    RewriteRule ^(.*)$ app/routes/Main.php?url=$1 [QSA,L]
+</IfModule>
+

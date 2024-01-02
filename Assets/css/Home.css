@@ -1,0 +1,76 @@
+*{
+    text-decoration: none !important;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #555555;
+    background-color: #141414;
+  }
+.custom-navbar {
+    background-color: #1A1A1A;
+}
+.custom-section {
+    color: #ffffff; /* Set text color to white or any contrasting color */
+}
+.mainBtnColor{
+     background-color: #703BF7;
+     color: #fff;
+}
+.scndryBtnColor{
+    background-color: #141414;
+}
+
+.customCard{
+    background-color: #1A1A1A;
+    color: #ffffff;
+}
+.scndText{
+    color: #999999;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom left, #2A213F, transparent);
+    z-index: 2; /* Adjust the z-index to position the overlay above the image */
+}
+.fit-image {
+    object-fit: cover; /* or contain, based on your preference */
+    width: 100%;
+    height: 100%;
+}
+.card {
+    border-radius: .7rem;
+    align-items: flex-start;
+  }
+  .card-body{
+    justify-content: flex-start;
+  }
+
+  .custom-carousel-btn {
+    background-color: #141414; /* White background color */
+    border: none;
+    font-size: 24px;
+    color: #fff; /* Change color as needed */
+    cursor: pointer;
+    margin: 0 10px; /* Adjust margin as needed */
+    border-radius: 50%; /* Make the button rounded */
+    width: 40px; /* Set the width of the button */
+    height: 40px; /* Set the height of the button */
+}
+
+.custom-carousel-btn:focus {
+    outline: white;
+}
+
+.custom-arrow-icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer-links a{
+    color: #999999 !important;
+}
