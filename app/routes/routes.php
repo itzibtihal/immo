@@ -5,6 +5,8 @@ $router->get('/immo/login', 'Login.php');
 $router->get('/immo/signup', 'Signup.php');
 $router->get('/immo/dashClient', 'Client.php');
 $router->get('/immo/dashSeller', 'Seller.php');
+$router->get('/immo/proprieties', 'Proprieties.php');
+$router->get('/immo/proprietiesdetails', 'ProprietyDetails.php');
 
 // $router->get('/', 'Controllers/home.php');
 // $router->get('/home', 'Controllers/home.php');

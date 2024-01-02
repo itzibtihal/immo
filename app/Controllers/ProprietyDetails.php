@@ -1,2 +1,7 @@
+<?php
+namespace MyApp\Controllers;
 
-<?php 
+require  '../../View/proprietyDetails.php';
+class Login {
+    
+}

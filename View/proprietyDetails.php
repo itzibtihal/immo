@@ -5,25 +5,25 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>EstateAgency Bootstrap Template - Index</title>
+  <title>immo</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="Assets/img/favicon.png" rel="icon">
+  <link href="Assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="Assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="Assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="Assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/test.css" rel="stylesheet">
+  <link href="Assets/css/proprties.css" rel="stylesheet">
   <script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.3/dist/boxicons.js"></script>
 
@@ -221,25 +221,25 @@
             <div id="property-single-carousel" class="swiper">
               <div class="swiper-wrapper">
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/1.webp" alt="">
+                  <img src="Assets/img/1.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/2.webp" alt="">
+                  <img src="Assets/img/2.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/3.webp" alt="">
+                  <img src="Assets/img/3.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/4.webp" alt="">
+                  <img src="Assets/img/4.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/5.webp" alt="">
+                  <img src="Assets/img/5.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/6.webp" alt="">
+                  <img src="Assets/img/6.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="assets/img/7.webp" alt="">
+                  <img src="Assets/img/7.webp" alt="">
                 </div>
               </div>
             </div>
@@ -455,12 +455,12 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="Assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="Assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="Assets/js/proprties.js"></script>
 
 </body>
 
