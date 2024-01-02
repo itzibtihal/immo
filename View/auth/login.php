@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatein - Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="Assets/css/authstyle.css" rel="stylesheet">
-</head>
-
 <?php
+session_start();
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true) {
+    header("Location: http://localhost:63342/MVC_Library/View/User/books.php");
+    exit;
+}
+
 $errors = $_SESSION['errors'] ?? [];
 session_unset();
 $pageTitle = 'Login';
@@ -100,7 +95,6 @@ $pageTitle = 'Login';
             </div>
         </div>
     </div>
-
 
 
         <?php include '../../View/templates/footer.php'; ?>
