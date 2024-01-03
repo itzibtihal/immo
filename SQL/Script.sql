@@ -40,19 +40,25 @@ CREATE TABLE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- RealEstate table
-CREATE TABLE
-    IF NOT EXISTS RealEstate (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255) NOT NULL,
-        description TEXT NOT NULL,
-        surface DOUBLE NOT NULL,
-        price DOUBLE NOT NULL,
-        status TINYINT(1) NOT NULL,
-        type_id INT NOT NULL,
-        location_id INT NOT NULL,
-        FOREIGN KEY (type_id) REFERENCES Type(id),
-        FOREIGN KEY (location_id) REFERENCES Location(id)
-    ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+CREATE TABLE property (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    city VARCHAR(100),
+    price DECIMAL(10, 2),
+    area INT,
+    beds INT,
+    baths INT,
+    garage BOOLEAN,
+    localization VARCHAR(255),
+    image1 VARCHAR(255),
+    image2 VARCHAR(255),
+    image3 VARCHAR(255),
+    image4 VARCHAR(255),
+    image5 VARCHAR(255),
+    type_id INT,
+    FOREIGN KEY (type_id) REFERENCES Type(id),
+);
 
 -- Type table
 CREATE TABLE
