@@ -1,8 +1,9 @@
 <?php 
 
-namespace MyApp\Model\Dao;
+namespace MyApp\Dao\DaoImpl;
 
 use MyApp\Config\DbConnection;
+use MyApp\Dao\DaoInterface;
 use PDO;
 
 class   DaoImplementation implements DaoInterface
@@ -54,4 +55,12 @@ class   DaoImplementation implements DaoInterface
     {
         // Implement logic to delete an entity from the database
     }
+
+    /**
+     
+@return mixed*/
+  public function getTableName(){
+      return $this->tableName;}
+
+
 }

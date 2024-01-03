@@ -1,6 +1,6 @@
 <?php 
 
-namespace MyApp\Model\Dao;
+namespace MyApp\Dao;
 
 interface DaoInterface
 {
