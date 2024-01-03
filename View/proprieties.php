@@ -25,7 +25,7 @@
   <!-- Template Main CSS File -->
   <link href="Assets/css/proprties.css" rel="stylesheet">
 
-  
+
 </head>
 
 <body>
@@ -49,7 +49,7 @@
                   <a href="#">Home</a>
                 </li>
                 <li class="breadcrumb-item active text-white" aria-current="page">
-                  Properties 
+                  Properties
                 </li>
               </ol>
             </nav>
@@ -75,121 +75,122 @@
               </form>
             </div>
           </div> -->
-          <!-- ======= Property Grid ======= -->
-<section class="property-grid grid">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="grid-option">
-          <form>
-            <select id="filterSelect" class="custom-select">
-              <option value="all" selected>All</option>
-              <option value="shepToExpensive">Shep to Expensive</option>
-              <option value="expensiveToShep">Expensive to Shep</option>
-              <option value="available">Available</option>
-              <option value="sold">Sold</option>
-            </select>
-          </form>
-        </div>
-      </div>
-   
+    <!-- ======= Property Grid ======= -->
+    <section class="property-grid grid">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="grid-option">
+              <form>
+                <select id="filterSelect" class="custom-select">
+                  <option value="all" selected>All</option>
+                  <option value="priceMinToMax">Shep to Expensive</option>
+
+                  <option value="available">Available</option>
+                  <option value="sold">Sold</option>
+                </select>
+              </form>
+            </div>
+          </div>
+
 
 
           <?php
-          
 
 
-            
-            use MyApp\Controllers\Proprieties;  
-            $propertyController = new Proprieties();
-            $propertiesForCardView = $propertyController->getAllPropertiesForCardView();
-        
-            foreach ($propertiesForCardView as $property): ?>
-          <div class="col-md-4 property-card" data-status="<?= $property['status'] ?>">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="<?= $property['image'] ?>" alt="" class="img-a img-fluid">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#"><?=  $property['title'] ?>
-                        <br /> </a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a"><?= $property['status'] ?> |$ <?=  $property['price'] ?></span>
+
+
+          use MyApp\Controllers\Proprieties;
+
+          $propertyController = new Proprieties();
+          $propertiesForCardView = $propertyController->getAllPropertiesForCardView();
+
+          foreach ($propertiesForCardView as $property) : ?>
+            <div class="col-md-4 property-card" data-status="<?= $property['status'] ?>" data-price="<?= $property['price'] ?>">
+              <div class="card-box-a card-shadow">
+                <div class="img-box-a">
+                  <img src="<?= $property['image'] ?>" alt="" class="img-a img-fluid">
+                </div>
+                <div class="card-overlay">
+                  <div class="card-overlay-a-content">
+                    <div class="card-header-a">
+                      <h2 class="card-title-a">
+                        <a href="#"><?= $property['title'] ?>
+                          <br /> </a>
+                      </h2>
                     </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span><?= $property['area'] ?>m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span><?= $property['beds'] ?></span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span><?= $property['baths'] ?></span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span><?= $property['garage'] ?></span>
-                      </li>
-                    </ul>
+                    <div class="card-body-a">
+                      <div class="price-box d-flex">
+                        <span class="price-a"><?= $property['status'] ?> |$ <?= $property['price'] ?></span>
+                      </div>
+                      <a href="property-single.html" class="link-a">Click here to view
+                        <span class="bi bi-chevron-right"></span>
+                      </a>
+                    </div>
+                    <div class="card-footer-a">
+                      <ul class="card-info d-flex justify-content-around">
+                        <li>
+                          <h4 class="card-info-title">Area</h4>
+                          <span><?= $property['area'] ?>m
+                            <sup>2</sup>
+                          </span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Beds</h4>
+                          <span><?= $property['beds'] ?></span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Baths</h4>
+                          <span><?= $property['baths'] ?></span>
+                        </li>
+                        <li>
+                          <h4 class="card-info-title">Garages</h4>
+                          <span><?= $property['garage'] ?></span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
           <?php endforeach  ?>
 
 
 
-        <div class="row">
-          <div class="col-sm-12">
-            <nav class="pagination-a">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">
-                    <span class="bi bi-chevron-left"></span>
-                  </a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item next">
-                  <a class="page-link" href="#">
-                    <span class="bi bi-chevron-right"></span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+          <div class="row">
+            <div class="col-sm-12">
+              <nav class="pagination-a">
+                <ul class="pagination justify-content-end">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">
+                      <span class="bi bi-chevron-left"></span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item next">
+                    <a class="page-link" href="#">
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
-      </div>
     </section><!-- End Property Grid Single-->
 
   </main><!-- End #main -->
 
- 
+
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -201,28 +202,63 @@
 
   <!-- Template Main JS File -->
   <script src="Assets/js/proprties.js"></script>
-  
+
   <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const filterSelect = document.getElementById("filterSelect");
-    const propertyCards = document.querySelectorAll(".property-card");
+    document.addEventListener("DOMContentLoaded", function() {
+      const filterSelect = document.getElementById("filterSelect");
+      const propertyCards = document.querySelectorAll(".property-card");
 
-    filterSelect.addEventListener("change", function () {
-      const selectedValue = filterSelect.value;
+      filterSelect.addEventListener("change", function() {
+        const selectedValue = filterSelect.value;
 
-      propertyCards.forEach(function (card) {
-        const cardStatus = card.getAttribute("data-status");
+        propertyCards.forEach(function(card) {
+          const cardStatus = card.getAttribute("data-status");
+          const cardPrice = parseFloat(card.getAttribute("data-price"));
 
-        
-        if (selectedValue === "all" || selectedValue === cardStatus.toLowerCase()) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+          switch (selectedValue) {
+            case "all":
+              card.style.display = "block";
+              break;
+            case "priceMinToMax":
+              // const propertyArray = Array.from(propertyCards);
+
+              // // Sort the property cards based on data-price attribute
+              // propertyArray.sort(function(a, b) {
+              //   const priceA = parseFloat(a.getAttribute("data-price"));
+              //   const priceB = parseFloat(b.getAttribute("data-price"));
+
+              //   return priceA - priceB;
+              // });
+
+              // // Append sorted cards back to the container
+              // const container = document.querySelector('.row');
+              // container.innerHTML = '';
+              // propertyArray.forEach(function(card) {
+              //   container.appendChild(card);
+              // });
+              break;
+            case "available":
+              
+              if (cardStatus.toLowerCase() === "available") {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+              break;
+            case "sold":
+              
+              if (cardStatus.toLowerCase() === "sold") {
+                card.style.display = "block";
+              } else {
+                card.style.display = "none";
+              }
+              break;
+          }
+        });
       });
     });
-  });
-</script>
+  </script>
+
 
 
 </body>
