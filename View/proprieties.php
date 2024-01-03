@@ -59,7 +59,7 @@
     </section><!-- End Intro Single-->
 
     <!-- ======= Property Grid ======= -->
-    <section class="property-grid grid">
+    <!-- <section class="property-grid grid">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -67,13 +67,33 @@
               <form>
                 <select class="custom-select">
                   <option selected>All</option>
-                  <option value="1">New to Old</option>
-                  <option value="2">For Rent</option>
-                  <option value="3">For Sale</option>
+                  <option value="1">Shep to Expensive</option>
+                  <option value="1">Expensive to Shep</option>
+                  <option value="2">available</option>
+                  <option value="3">Sold</option>
                 </select>
               </form>
             </div>
-          </div>
+          </div> -->
+          <!-- ======= Property Grid ======= -->
+<section class="property-grid grid">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="grid-option">
+          <form>
+            <select id="filterSelect" class="custom-select">
+              <option value="all" selected>All</option>
+              <option value="shepToExpensive">Shep to Expensive</option>
+              <option value="expensiveToShep">Expensive to Shep</option>
+              <option value="available">Available</option>
+              <option value="sold">Sold</option>
+            </select>
+          </form>
+        </div>
+      </div>
+   
+
 
           <?php
           
@@ -85,7 +105,7 @@
             $propertiesForCardView = $propertyController->getAllPropertiesForCardView();
         
             foreach ($propertiesForCardView as $property): ?>
-          <div class="col-md-4">
+          <div class="col-md-4 property-card" data-status="<?= $property['status'] ?>">
             <div class="card-box-a card-shadow">
               <div class="img-box-a">
                 <img src="<?= $property['image'] ?>" alt="" class="img-a img-fluid">
@@ -181,6 +201,29 @@
 
   <!-- Template Main JS File -->
   <script src="Assets/js/proprties.js"></script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterSelect = document.getElementById("filterSelect");
+    const propertyCards = document.querySelectorAll(".property-card");
+
+    filterSelect.addEventListener("change", function () {
+      const selectedValue = filterSelect.value;
+
+      propertyCards.forEach(function (card) {
+        const cardStatus = card.getAttribute("data-status");
+
+        
+        if (selectedValue === "all" || selectedValue === cardStatus.toLowerCase()) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+</script>
+
 
 </body>
 
