@@ -1,4 +1,5 @@
 <?php
+namespace MyApp\Entity;
 
 class Property {
     private $id;
@@ -11,6 +12,7 @@ class Property {
     private $baths;
     private $garage;
     private $localization;
+    private $status;
     private $image1;
     private $image2;
     private $image3;
@@ -18,7 +20,7 @@ class Property {
     private $image5;
     private $type_id;
 
-    public function __construct($title, $description, $city, $price, $area, $beds, $baths, $garage, $localization, $image1, $image2, $image3, $image4, $image5, $type_id) {
+    public function __construct($title, $description, $city, $price, $area, $beds, $baths, $garage, $localization,$status, $image1, $image2, $image3, $image4, $image5, $type_id) {
         $this->title = $title;
         $this->description = $description;
         $this->city = $city;
@@ -28,6 +30,7 @@ class Property {
         $this->baths = $baths;
         $this->garage = $garage;
         $this->localization = $localization;
+        $this->status = $status;
         $this->image1 = $image1;
         $this->image2 = $image2;
         $this->image3 = $image3;
@@ -75,6 +78,9 @@ class Property {
 
     public function getLocalization() {
         return $this->localization;
+    }
+    public function getStatus() {
+        return $this->status;
     }
 
     public function getImage1() {
@@ -140,6 +146,9 @@ class Property {
 
     public function setLocalization($localization) {
         $this->localization = $localization;
+    }
+    public function setStatus($status) {
+        $this->status = $status;
     }
 
     public function setImage1($image1) {

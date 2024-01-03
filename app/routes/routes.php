@@ -7,6 +7,7 @@ $router->get('/immo/dashClient', 'Client.php');
 $router->get('/immo/dashSeller', 'Seller.php');
 $router->get('/immo/proprieties', 'Proprieties.php');
 $router->get('/immo/ProprietyDetails', 'ProprietyDetails.php');
+$router->get('/immo/test', 'test.php');
 
 // $router->get('/', 'Controllers/home.php');
 // $router->get('/home', 'Controllers/home.php');

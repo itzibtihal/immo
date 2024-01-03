@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace MyApp\Dao\DaoImpl;
 
@@ -8,8 +8,8 @@ use PDO;
 
 class   DaoImplementation implements DaoInterface
 {
-    private $db;
-    private $tableName;
+    protected $db;
+    protected $tableName;
 
     public function __construct($tableName)
     {
@@ -30,15 +30,15 @@ class   DaoImplementation implements DaoInterface
     public function getAll(): array
     {
         $query = "SELECT * FROM $this->tableName";
-    $statement = $this->db->query($query);
+        $statement = $this->db->query($query);
 
-    // Check if the query was successful
-    if ($statement) {
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        // Handle the error or return an empty array
-        return [];
-    }
+        // Check if the query was successful
+        if ($statement) {
+            return $statement->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            // Handle the error or return an empty array
+            return [];
+        }
     }
 
     public function save($entity): void
@@ -59,8 +59,8 @@ class   DaoImplementation implements DaoInterface
     /**
      
 @return mixed*/
-  public function getTableName(){
-      return $this->tableName;}
-
-
+    public function getTableName()
+    {
+        return $this->tableName;
+    }
 }

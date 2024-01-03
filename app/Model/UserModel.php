@@ -7,9 +7,10 @@ use MyApp\Entity\User;
 
 class UserModel extends DaoImplementation
 {
-    public function construct()
+    
+    public function __construct()
     {
-        parent::construct('user');
+        parent::__construct("user");
     }
 
     public function getUserByEmail($email)
@@ -22,7 +23,7 @@ class UserModel extends DaoImplementation
         $user = $stmt->fetch(\PDO::FETCH_CLASS, 'User');
 
         if (!$user) {
-            return null; // User not found
+            return null; 
         }
 
         return $user;
