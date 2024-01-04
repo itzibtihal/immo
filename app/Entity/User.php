@@ -62,7 +62,7 @@ class User
     }
 
     public function setEmail($email) {
-        var_dump($email);
+        // var_dump($email);
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->email = $email;
         } else {

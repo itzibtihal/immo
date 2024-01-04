@@ -35,4 +35,15 @@ class UserModel extends DaoImplementation
     private function generateUniqueId() {
         return uniqid(rand(), true);
     }
+
+    public function getUserById($userId)
+    {
+        $sql = "SELECT * FROM {$this->tableName} WHERE id = :id";
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->bindParam(':id', $userId);
+        $stmt->execute();
+        $userData = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        return $userData ? new User($userData) : null;
+    }
 }

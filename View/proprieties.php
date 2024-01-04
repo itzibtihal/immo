@@ -8,6 +8,9 @@
   <title>immo</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="Assets/css/authstyle.css">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -31,7 +34,7 @@
 <body>
 
   <main id="main">
-
+  <?php include 'templates/header.php' ?>
     <!-- ======= Intro Single ======= -->
     <section class="intro-single">
       <div class="container">
@@ -123,7 +126,7 @@
                       <div class="price-box d-flex">
                         <span class="price-a"><?= $property['status'] ?> |$ <?= $property['price'] ?></span>
                       </div>
-                      <a href="" class="link-a">Click here to view
+                      <a href="ProprietyDetails" class="link-a">Click here to view
                         <!-- ProprietyDetails/details?id=
                       <?php
                       //= $property->getId()
@@ -276,7 +279,7 @@
   </script>
 
 
-
+<?php include 'templates/footer.php' ?>
 </body>
 
 </html>

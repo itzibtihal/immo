@@ -30,12 +30,18 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
+    <link rel="stylesheet" href="Assets/css/authstyle.css">
   <!-- Vendor CSS Files -->
   <link href="Assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="Assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="Assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="Assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
 
   <!-- Template Main CSS File -->
   <link href="Assets/css/proprties.css" rel="stylesheet">
@@ -46,7 +52,7 @@
 </head>
 
 <body>
-
+<?php include 'templates/header.php' ?>
 
   <main id="main">
 
@@ -231,28 +237,26 @@
               </div>
               <div class="col-md-6 col-lg-4">
                 <div class="property-agent">
-                  <h4 class="title-agent"> Mary R. Neuman </h4>
+                  <h4 class="title-agent"> <?= $propertyDetails['agent_name'] ?? '' ?> </h4>
                   <p class="color-text-a">
-                    Nulla porttitor accumsan tincidunt. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
-                    dui. Quisque velit nisi,
-                    pretium ut lacinia in, elementum id enim.
+                  To initiate contact with the agent, kindly click on the "Send Message" button. This will direct you to a messaging platform where you can compose and transmit your message efficiently.
                   </p>
                   <ul class="list-unstyled">
                     <li class="d-flex justify-content-between">
                       <strong>Phone:</strong>
-                      <span class="color-text-a">(212) 0714568932</span>
+                      <span class="color-text-a"><?= $propertyDetails['agent_phone'] ?? '' ?></span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>City:</strong>
-                      <span class="color-text-a"></span>
+                      <span class="color-text-a"> <?= $propertyDetails['agent_city'] ?? '' ?> </span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Email:</strong>
-                      <span class="color-text-a">MaryNeuman@example.com</span>
+                      <span class="color-text-a"><?= $propertyDetails['agent_email'] ?? '' ?></span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Skype:</strong>
-                      <span class="color-text-a">Mary.R.Neuman</span>
+                      <span class="color-text-a text-white">HIDDEN</span>
                     </li>
                   </ul>
 
@@ -304,6 +308,8 @@
 
   <!-- Template Main JS File -->
   <script src="Assets/js/proprties.js"></script>
+  <script src="Assets/js/myscript.js"></script>
+  <?php include 'templates/footer.php' ?>
 
 </body>
 
