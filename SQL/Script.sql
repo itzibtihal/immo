@@ -57,8 +57,11 @@ CREATE TABLE property (
     image4 VARCHAR(255),
     image5 VARCHAR(255),
     type_id INT,
+    user_id INT, 
     FOREIGN KEY (type_id) REFERENCES Type(id),
+    FOREIGN KEY (user_id) REFERENCES User(id) 
 );
+
 
 -- Type table
 CREATE TABLE

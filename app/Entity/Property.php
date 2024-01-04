@@ -1,6 +1,5 @@
 <?php
 namespace MyApp\Entity;
-
 class Property {
     private $id;
     private $title;
@@ -19,8 +18,9 @@ class Property {
     private $image4;
     private $image5;
     private $type_id;
+    private $user_id; // New property for user ID
 
-    public function __construct($title, $description, $city, $price, $area, $beds, $baths, $garage, $localization,$status, $image1, $image2, $image3, $image4, $image5, $type_id) {
+    public function __construct($title, $description, $city, $price, $area, $beds, $baths, $garage, $localization, $status, $image1, $image2, $image3, $image4, $image5, $type_id, $user_id) {
         $this->title = $title;
         $this->description = $description;
         $this->city = $city;
@@ -37,6 +37,7 @@ class Property {
         $this->image4 = $image4;
         $this->image5 = $image5;
         $this->type_id = $type_id;
+        $this->user_id = $user_id;
     }
 
     // Getters
@@ -79,6 +80,7 @@ class Property {
     public function getLocalization() {
         return $this->localization;
     }
+
     public function getStatus() {
         return $this->status;
     }
@@ -105,6 +107,10 @@ class Property {
 
     public function getTypeID() {
         return $this->type_id;
+    }
+
+    public function getUserId() {
+        return $this->user_id;
     }
 
     // Setters
@@ -147,6 +153,7 @@ class Property {
     public function setLocalization($localization) {
         $this->localization = $localization;
     }
+
     public function setStatus($status) {
         $this->status = $status;
     }
@@ -174,6 +181,8 @@ class Property {
     public function setTypeID($type_id) {
         $this->type_id = $type_id;
     }
-}
 
-?>
+    public function setUserId($user_id) {
+        $this->user_id = $user_id;
+    }
+}

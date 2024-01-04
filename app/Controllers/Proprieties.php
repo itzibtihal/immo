@@ -2,9 +2,9 @@
 namespace MyApp\Controllers;
 
 
+require  '../../View/proprieties.php';
 use MyApp\Model\PropertyModel;
 
-require  '../../View/proprieties.php';
 class PropertyController
 {
     public function getAllPropertiesForCardView(): array
@@ -25,17 +25,14 @@ class PropertyController
                     'beds' => $property->getBeds(),
                     'baths' => $property->getBaths(),
                     'garage' => $property->getGarage(),
+                    'user_id' => $property->getUserId(), 
                 ];
             }
 
             return $formattedProperties;
         } catch (\Exception $e) {
-            // You might want to handle exceptions differently (logging, etc.)
+            
             return [];
         }
     }
-
-
-
-
 }

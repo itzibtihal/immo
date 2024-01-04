@@ -241,8 +241,8 @@
                       <span class="color-text-a">(212) 0714568932</span>
                     </li>
                     <li class="d-flex justify-content-between">
-                      <strong>Mobile:</strong>
-                      <span class="color-text-a">777 287 378 737</span>
+                      <strong>City:</strong>
+                      <span class="color-text-a"></span>
                     </li>
                     <li class="d-flex justify-content-between">
                       <strong>Email:</strong>

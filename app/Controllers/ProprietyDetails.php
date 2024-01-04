@@ -1,9 +1,8 @@
 <?php
-namespace MyApp\Controllers;
-
-require  '../../View/proprietyDetails.php';
 
 namespace MyApp\Controllers;
+
+require '../../View/proprietyDetails.php';
 
 use MyApp\Model\PropertyModel;
 
@@ -34,16 +33,14 @@ class PropertyDetailsController
                     'image4' => $property->getImage4(),
                     'image5' => $property->getImage5(),
                     'type_id' => $property->getTypeID(),
+                    'user_id' => $property->getUserId(), 
                 ];
 
-                
                 return $propertyDetails;
             } else {
-                
                 return [];
             }
         } catch (\Exception $e) {
-            
             return [];
         }
     }
