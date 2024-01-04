@@ -84,7 +84,7 @@
               <form>
                 <select id="filterSelect" class="custom-select">
                   <option value="all" selected>All</option>
-                  <option value="priceMinToMax">Shep to Expensive</option>
+                  <option value="priceMinToMax">price under 1 000 000 $</option>
 
                   <option value="available">Available</option>
                   <option value="sold">Sold</option>
@@ -123,7 +123,11 @@
                       <div class="price-box d-flex">
                         <span class="price-a"><?= $property['status'] ?> |$ <?= $property['price'] ?></span>
                       </div>
-                      <a href="property-single.html" class="link-a">Click here to view
+                      <a href="" class="link-a">Click here to view
+                        <!-- ProprietyDetails/details?id=
+                      <?php
+                      //= $property->getId()
+                      ?> -->
                         <span class="bi bi-chevron-right"></span>
                       </a>
                     </div>
@@ -220,6 +224,16 @@
               card.style.display = "block";
               break;
             case "priceMinToMax":
+              propertyCards.forEach(function(card) {
+                const cardPrice = parseFloat(card.getAttribute("data-price"));
+
+                
+                if (cardPrice < 1000000) {
+                  card.style.display = "block";
+                } else {
+                  card.style.display = "none";
+                }
+              });
               // const propertyArray = Array.from(propertyCards);
 
               // // Sort the property cards based on data-price attribute
@@ -238,7 +252,7 @@
               // });
               break;
             case "available":
-              
+
               if (cardStatus.toLowerCase() === "available") {
                 card.style.display = "block";
               } else {
@@ -246,7 +260,7 @@
               }
               break;
             case "sold":
-              
+
               if (cardStatus.toLowerCase() === "sold") {
                 card.style.display = "block";
               } else {
