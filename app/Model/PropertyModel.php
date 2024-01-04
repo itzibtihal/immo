@@ -162,4 +162,17 @@ class PropertyModel extends DaoImplementation
             return [];
         }
     }
+
+
+    public function countProperties(): int
+    {
+        $query = "SELECT COUNT(*) FROM $this->tableName";
+        $statement = $this->getConnection()->query($query);
+
+        if ($statement) {
+            return (int)$statement->fetchColumn();
+        } else {
+            return 0;
+        }
+    }
 }

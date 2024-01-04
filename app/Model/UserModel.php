@@ -46,4 +46,17 @@ class UserModel extends DaoImplementation
 
         return $userData ? new User($userData) : null;
     }
+
+    public function countUsersWithRoleId($role_id)
+    {
+        $sql = "SELECT COUNT(*) FROM {$this->tableName} WHERE role_id = :role_id";
+        $stmt = $this->getConnection()->prepare($sql);
+        $stmt->bindParam(':role_id', $role_id);
+        $stmt->execute();
+
+        return (int)$stmt->fetchColumn();
+    }
+
+
+
 }
