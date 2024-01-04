@@ -1,4 +1,19 @@
+<?php
+
+
+
+
+          use MyApp\Controllers\PropertyDetailsController;
+          $propertyController = new PropertyDetailsController();
+          $propertyDetails = $propertyController->getPropertyDetails(1);
+
+
+
+         
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -41,9 +56,9 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              
-              <h1 class="title-single">MAISON DE VILLE NEUVE 3 CHAMBRES, JACUZZI</h1>
-              <span class="color-text-a"><ion-icon name="location-outline"></ion-icon> Taroudant </span>
+
+              <h1 class="title-single"> <?php echo $propertyDetails['title']; ?> </h1>
+              <span class="color-text-a"><ion-icon name="location-outline"></ion-icon> <?php echo $propertyDetails['city']; ?> </span>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -52,7 +67,7 @@
                 <li class="breadcrumb-item active text-white" aria-current="page">
                   Price :
                   <br>
-                  1 230 000 <span> £ </span>
+                  <?php echo number_format($propertyDetails['price']); ?> <span> £ </span>
                 </li>
               </ol>
             </nav>
@@ -69,26 +84,26 @@
             <div id="property-single-carousel" class="swiper">
               <div class="swiper-wrapper">
                 <div class="carousel-item-b swiper-slide">
-                  <img src="Assets/img/1.webp" alt="">
+                  <img src="<?php echo $propertyDetails['image1']; ?>" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="Assets/img/2.webp" alt="">
+                  <img src="<?php echo $propertyDetails['image2']; ?>" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="Assets/img/3.webp" alt="">
+                  <img src="<?php echo $propertyDetails['image3']; ?>" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="Assets/img/4.webp" alt="">
+                  <img src="<?php echo $propertyDetails['image4']; ?>" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
-                  <img src="Assets/img/5.webp" alt="">
+                  <img src="<?php echo $propertyDetails['image5']; ?>" alt="">
                 </div>
-                <div class="carousel-item-b swiper-slide">
+                <!-- <div class="carousel-item-b swiper-slide">
                   <img src="Assets/img/6.webp" alt="">
                 </div>
                 <div class="carousel-item-b swiper-slide">
                   <img src="Assets/img/7.webp" alt="">
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="property-single-carousel-pagination carousel-pagination"></div>
@@ -122,20 +137,20 @@
                     <ul class="list">
                       <li class="d-flex justify-content-between text-white">
                         <strong>Property ID:</strong>
-                        <span>1134</span>
+                        <span><?php echo $propertyDetails['id']; ?></span>
                       </li>
                       <li class="d-flex justify-content-between text-white">
                         <strong> <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAf9JREFUSEvVlU2Ij1EUxn8PUjQlUlKThY3NLDQT2YyaRBOJtZrZTBYWFmwsRIlkpZTCUpM9Ih8Ln4tpaj42FBYTUVZYiKHk8R7dd/rP/N+vv/ov3Ho37z33ec557nnOFV1e6jI+HRHYdiQkqfG5xoEB3BUC2/uBfcBuYHOSdA54CNyRdLdK5tIKbK8FxhN4FUYQjEj6UhRUSGB7PTANbAJ+AteAS5Ii85AqKjkOHAZWAm+B/iKSMoJ7wDDwHtgj6VVRdrb7klQbM4Lbkg4sjWsjsL0DmAB+AduzQ7O2B4BTQZYAQv+zkqZt7wSepv9RxWwrSRHBGeA0cFnS0QT+HFi1JLt5YDCR3AAORRKSztURTAGRcZ+kl7ZvAm2lJ5Bbkg7aHgIeAZOSQoGFtVBB3uMte8sl/bb9vSD7PGxe0mrb64BPi4CTGasIeiR9a0jQA3ytJMg3becSDUiaaShR3hhTmfG21d3BBeAEcFXSkYaXfB0YzTxxXtLJOoIYCdGGTdt0EHiWQIckPakjWAZEUBx8l4z2psRoW4H7wAbgMbBL0t+Jm68yJ/cCL4A1wI8M4ApwUdKHNCq2AMcyp48BK4DPqa0/1jq55bJj3oSBFvV1QSVhwhh2UW3bqnwPbMf+3vTFbMrH9et0Tw/+eVyXaP4fvmhFlXTyr6M3uRPgPPYPlDXXGUPye5UAAAAASUVORK5CYII=" />
                           Location:</strong>
-                        <span>Taroudant</span>
+                        <span><?php echo $propertyDetails['city']; ?></span>
                       </li>
                       <li class="d-flex justify-content-between text-white">
                         <strong><img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAALNJREFUSEvdlUEKwjAQRd8/h1AQF3qbXsaNN9ALeRA33YmC9xjpIlBjUsjQUTTb5M+b/0kyIngpuD6fBZhZDxyBndPZAOwlnZP+xYGZPYCVs3iSXSVtagAbNyS5ojOzN33u4PuA1OU0xuR4EQfhgGnneceLOPgtQMny3Btpjuh/AKU7X4rKHVEYoPXTa3YQAbgDXWvh7PxN0rr2XY8D5wRsnZALcKgOHGfRWZlrsLQ0Eg54ApqerhngS8TVAAAAAElFTkSuQmCC" />
                           Area:</strong>
                         <span>
-                          210 m
+                        <?php echo $propertyDetails['area']; ?> m
                           <sup>2</sup>
                         </span>
                       </li>
@@ -143,19 +158,19 @@
                         <strong> <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAOBJREFUSEvllS0OwkAQhb+X4FEEjyMIVD0GgcVzEA7BLbAIPAmeIHAEwQUIAosaAqFNWdomu/0RsH7et/PezK6o+ahmfZoHmJk9u5LkBc+r+xJpDBCajdt5bge1A7IyKLKvkgxKA8wsAnah9rzrIkn7WCPJwMwGwAFolQTcgaGk02vcYzEzWwFTYA3MJR19QGbWBxbABFhKmrmAG9AGupIuPuKpS/aAM3CV1HEBQRvsXsQdhLRFPwII8T6rJl7UtEVbYFQRYCNp/BFyahKCsqjkqSjq7o8AFYWcyHj9uyHwB+erkRlS/3eVAAAAAElFTkSuQmCC" />
                           Beds:</strong>
-                        <span>4</span>
+                        <span><?php echo $propertyDetails['beds']; ?></span>
                       </li>
                       <li class="d-flex justify-content-between text-white">
                         <strong> <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAWFJREFUSEvVlEErRGEUhp/XL1BohFLWFsqCkqIsKDsLG6WwUBbWfgRbKTZsrJQdWWChZMMfsCHSKCv713zj3pruzO3emWuafKvb7Xznec/5znlFm4/anJ/OAWz3A4fAZFTlHbAh6bOZqhtWECV/BAKk9rwCY5K+8kLSACfACnAO7ETJdoEF4EDSZlHAGzAAlCSVQzLbI8Az8CJpuCjAIYGkwkOQ1qJ/CLB9Dczk7W1G3I2k2Wqb40Db1bb81Ynfrw5Q9GFjoY0AYRz7gEFJ761UYnsICMtYllRKtugKmANWJR23CFgDjoBLSfNJwDJwCgSvGY0XLC8oUv8E9ABLks6SgC7gARgHPiqlrgP3Wb5juxeYiowxfAdTnJb0u0u1Cm13V9zzApjIqzwRdwssSvqO/9dtsu1QyTaw1yRkq+Jd+7HyVEByL7LGNjmWSVGpZpZ1Ma+QzgGa7H9qeGG/zxLyAwyvihkcLPyyAAAAAElFTkSuQmCC" />
                           Baths:</strong>
-                        <span>2</span>
+                        <span><?php echo $propertyDetails['baths']; ?></span>
                       </li>
                       <li class="d-flex justify-content-between text-white">
                         <strong> <img
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgFJREFUSEu1lTloVkEUhb9DCGITC1cEEQVFS0EIxCCCWyEGUmlcsLMTRYMW9qJFMLGwE1QQxC0EQXAjrmBjoVhoo2XQBAsbBZfjG3kvTN7yOyH80w3vnvPdmbn3PtHmpTb7kwSw3Q0cBPYCBkaBG8C4pN+tkmwE2F4JHAIOAGsaTCaBOznsiaQ/5bgZANsL8ixDtpui4KkMcg24AvzIoQPZflUU8wW4ncOeFbBpgO1bQB/QmYt+AfeAy8BdSWE/Y9nuAfYA+4GF0cfPkpaFfQwIdxvWm9z0qqSvKUVguwPYCuzL9P1Al6R/3jFgBLgk6a3tncApoDc6URPrZ2b+HDgr6aHtecBuSeFGqlVkewXwLmSRkn0U8w1YJ2ki1lWqyPYwcBQYAwYkfW8Fsj0fuAnsAs5LOv4/QMggPFCvpJcpp7C9GXgKTEha3gjIG+oVMF0FiYBwEyGxpcBGSa8LXbkPzgEngSFJgynmRYztC8AR4Iyk0xWA7Q3AA2DRbIxrYkNT9kt6US7TD8DaOZoX8veS1jc1WqiiIeAEcCwRWNHUNVrRyUskTdpeDIT5krIqmlaAw1nDXM8H2sUUd6CiqQN8LE3HRO/asE+SVpffYAdwfy6ukXabpMeVWWS7eAeKI6YCm7TlRhsHtmRj4lE2Jranmoc427XapH/ybEDl2LYD/gJmS7gZHDoQXAAAAABJRU5ErkJggg==" />
                           Garage:</strong>
-                        <span>1</span>
+                        <span><?php echo $propertyDetails['garage']; ?></span>
                       </li>
                     </ul>
                   </div>
@@ -172,29 +187,7 @@
                 <div class="property-description">
                   <p class="description color-text-a">
 
-                    découvrir cette superbe maison de ville situé à 1.5 kilomètres des remparts de
-                    la ville de Taroudant, dans le nouveau lotissement AL WIAM en face Nadim en
-                    dessous de Mhaita. Cette maison est toute neuve, très belle et entièrement
-                    finie, elle ne nécessite aucuns travaux. Elle vous propose 210 M2 habitable
-                    plus une terrasse de 80 M2 entièrement carrelée avec un grand jacuzzi chauffé
-                    et une vue époustouflante sur l'Atlas, l'Anti Atlas et la campagne
-                    environnante. Un garage avec portail électrique pour entrer sa voiture, un
-                    petit jardinet, au réez de chaussée, une grande pièce à vivre comprenant salon,
-                    salle à manger, un toilette, son lavabo, une cuisine toute équipée donnant sur
-                    l'extérieur d'environ 45 M2 engazonné et planté de bougainvilliers, une arrière
-                    cuisine avec des étagères de part et d'autre des murs entièrement carrelées, au
-                    sous-sol, un salon Marocain, un bureau, un dressing, rangement sous escaliers,
-                    au premier étage le coin nuit desservit par un hall autour duquel s'organise,
-                    un magnifique dressing, une chambre d'ami avec placard, une deuxième chambre
-                    avec placard, une salle de bain commune a ces deux chambres, une suite
-                    parentale avec baie vitrée, balcon, grand placard de rangement, salle de bain
-                    avec douche, un toilette, volets roulants électriques dans toutes les chambres. 
-                  </p>
-                  <p class="description color-text-a no-margin">
-                    L'exposition
-                    Est/Ouest de ce bien conjugué à de nombreuses
-                    baies et murs vitrés vous assure une luminosité exceptionnelle toute la
-                    journée.
+                  <?php echo $propertyDetails['description']; ?>
                   </p>
                 </div>
 
@@ -217,7 +210,7 @@
 
               <div class="tab-pane fade" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1422937950147!2d-73.98731968482413!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes+Square!5e0!3m2!1ses-419!2sve!4v1510329142834"
+                  src="<?php echo $propertyDetails['localization']; ?>"
                   width="100%" height="460" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
             </div>

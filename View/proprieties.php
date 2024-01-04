@@ -100,9 +100,9 @@
 
 
 
-          use MyApp\Controllers\Proprieties;
+          use MyApp\Controllers\PropertyController;
 
-          $propertyController = new Proprieties();
+          $propertyController = new PropertyController();
           $propertiesForCardView = $propertyController->getAllPropertiesForCardView();
 
           foreach ($propertiesForCardView as $property) : ?>
@@ -234,9 +234,11 @@
                   card.style.display = "none";
                 }
               });
+
+
               // const propertyArray = Array.from(propertyCards);
 
-              // // Sort the property cards based on data-price attribute
+              // // Sort the property 
               // propertyArray.sort(function(a, b) {
               //   const priceA = parseFloat(a.getAttribute("data-price"));
               //   const priceB = parseFloat(b.getAttribute("data-price"));
@@ -244,7 +246,7 @@
               //   return priceA - priceB;
               // });
 
-              // // Append sorted cards back to the container
+              // 
               // const container = document.querySelector('.row');
               // container.innerHTML = '';
               // propertyArray.forEach(function(card) {

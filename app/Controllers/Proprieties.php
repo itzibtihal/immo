@@ -5,7 +5,7 @@ namespace MyApp\Controllers;
 use MyApp\Model\PropertyModel;
 
 require  '../../View/proprieties.php';
-class Proprieties
+class PropertyController
 {
     public function getAllPropertiesForCardView(): array
     {
@@ -30,7 +30,7 @@ class Proprieties
 
             return $formattedProperties;
         } catch (\Exception $e) {
-            // exceptions 
+            // You might want to handle exceptions differently (logging, etc.)
             return [];
         }
     }
