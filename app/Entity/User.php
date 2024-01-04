@@ -11,22 +11,40 @@ class User
     private $phone;
     private $image;
     private $status;
-    private $role;
-    private $location;
+    private $role_id;
+    private $address;
     private $city;
 
-    public function __construct($username, $email, $password, $phone = null, $image = null, $status = null, $role = null, $location = null, $city = null) {
-        $this->username = $username;
-        $this->email = $email;
-        $this->password = $password;
-        $this->phone = $phone;
-        $this->image = $image;
-        $this->status = $status;
-        $this->role = $role;
-        $this->location = $location;
-        $this->city = $city;
+
+    public function setId($id): void
+    {
+        $this->id = $id;
     }
-    
+
+    private  $unique_id;
+
+    public function __construct(array $data = []) {
+        if (!empty($data)) {
+            $this->fromArray($data);
+        }
+        $this->unique_id = $data['unique_id'] ?? $this->generateUniqueId();
+
+    }
+
+    public function fromArray(array $data) {
+        foreach ($data as $key => $value) {
+            $method = 'set' . str_replace(' ', '', ucwords(str_replace('_', ' ', $key)));
+            if (method_exists($this, $method)) {
+                call_user_func([$this, $method], $value);
+            }
+        }
+    }
+
+   
+    public function toArray() {
+        return get_object_vars($this);
+    }
+
     public function getId() {
         return $this->id;
     }
@@ -38,26 +56,34 @@ class User
         $this->username = $username;
     }
 
-    // Getter and setter for email
+    
     public function getEmail() {
         return $this->email;
     }
 
     public function setEmail($email) {
-        $this->email = $email;
+        var_dump($email);
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $this->email = $email;
+        } else {
+            throw new \InvalidArgumentException("Invalid email address.");
+        }
     }
 
-    // Getter and setter for password
+   
+    public function setPassword($password) {
+        $this->password =$password;
+
+    }
+
+    
     public function getPassword() {
         return $this->password;
     }
 
-    public function setPassword($password) {
-        $this->password = $password;
-        // You might want to hash the password here using the hashPassword method
-    }
 
-    // Getter and setter for phone
+
+   
     public function getPhone() {
         return $this->phone;
     }
@@ -66,7 +92,7 @@ class User
         $this->phone = $phone;
     }
 
-    // Getter and setter for image
+    
     public function getImage() {
         return $this->image;
     }
@@ -75,7 +101,7 @@ class User
         $this->image = $image;
     }
 
-    // Getter and setter for status
+  
     public function getStatus() {
         return $this->status;
     }
@@ -84,25 +110,24 @@ class User
         $this->status = $status;
     }
 
-    // Getter and setter for role
-    public function getRole() {
-        return $this->role;
+    
+    public function getRoleId() {
+        return $this->role_id;
     }
 
-    public function setRole($role) {
-        $this->role = $role;
+    public function setRoleId($role_id) {
+        $this->role_id = $role_id;
     }
 
-    // Getter and setter for location
-    public function getLocation() {
-        return $this->location;
+    
+    public function getAddress() {
+        return $this->address;
     }
 
-    public function setLocation($location) {
-        $this->location = $location;
+    public function setAddress($address) {
+        $this->address = $address;
     }
 
-    // Getter and setter for city
     public function getCity() {
         return $this->city;
     }
@@ -110,4 +135,15 @@ class User
     public function setCity($city) {
         $this->city = $city;
     }
+    private function generateUniqueId()
+    {
+        
+        return uniqid('', true);
+    }
+    public function getUniqueId() {
+        return $this->unique_id;
+    }
+    public function setUniqueId($unique_id) {
+    $this->unique_id = $unique_id;
+}
 }

@@ -4,6 +4,13 @@ namespace MyApp\Core;
 
 class Session
 {
+
+    public static function start()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+    }
     public static function has($key)
     {
         return (bool) static::get($key);
@@ -22,6 +29,10 @@ class Session
     public static function flash($key, $value)
     {
         $_SESSION['_flash'][$key] = $value;
+    }
+    public static function getFlash($key)
+    {
+        return $_SESSION['_flash'][$key] ?? null;
     }
 
     public static function unflash()

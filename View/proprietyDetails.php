@@ -109,6 +109,8 @@
             <div class="property-single-carousel-pagination carousel-pagination"></div>
           </div>
         </div>
+        <br>
+        <br>
 
         <div class="row">
           <div class="col-sm-12">
